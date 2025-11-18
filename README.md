@@ -1,59 +1,93 @@
-# MeteoDaw
+# MeteoDAW
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.0-rc.5.
+App web on consultar informació meteorològica bàsica, mostrant el temps actual d’una ciutat i una previsió de pocs dies.
 
-## Development server
+## Tecnologies
 
-To start a local development server, run:
+- Angular 21.0.0
+- Tailwind CSS v4
+- OpenWeatherMap API (gratuïta) per obtenir el temps.
 
-```bash
-ng serve
+## Estructura del projecte
+
+```
+src/
+├── index.html
+├── main.ts
+├── styles.css
+├── app/
+│   ├── app.config.ts
+│   ├── app.css
+│   ├── app.html
+│   ├── app.routes.ts
+│   ├── app.spec.ts
+│   ├── app.ts
+│   ├── components/
+│   │   ├── footer/
+│   │   │   ├── footer.css
+│   │   │   ├── footer.html
+│   │   │   └── footer.ts
+│   │   ├── header/
+│   │   │   ├── header.css
+│   │   │   ├── header.html
+│   │   │   └── header.ts
+│   │   └── weather-card/
+│   │       ├── weather-card.css
+│   │       ├── weather-card.html
+│   │       └── weather-card.ts
+│   ├── pages/
+│   │   ├── about/
+│   │   │   ├── about.css
+│   │   │   ├── about.html
+│   │   │   └── about.ts
+│   │   ├── ciutats/
+│   │   │   ├── ciutats.css
+│   │   │   ├── ciutats.html
+│   │   │   └── ciutats.ts
+│   │   ├── contacte/
+│   │   │   ├── contacte.css
+│   │   │   ├── contacte.html
+│   │   │   └── contacte.ts
+│   │   ├── faq/
+│   │   │   ├── faq.css
+│   │   │   ├── faq.html
+│   │   │   └── faq.ts
+│   │   ├── home/
+│   │   │   ├── home.css
+│   │   │   ├── home.html
+│   │   │   └── home.ts
+│   │   ├── previsio/
+│   │   │   ├── previsio.css
+│   │   │   ├── previsio.html
+│   │   │   └── previsio.ts
+│   │   └── temps/
+│   │       ├── temps.css
+│   │       ├── temps.html
+│   │       └── temps.ts
+│   └── services/
+│       └── weather.service.ts
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+## Paraules clau
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- temps avui
+- previsió meteorològica
+- clima local
+- quant fa de temperatura
+- mapa del temps
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Públic objectiu
 
-```bash
-ng generate --help
-```
+- Estudiants i professors (perquè és didàctica i clara).
+- Usuari general que només vol veure el temps ràpidament.
+- Persones que volen consultar la previsió d’una ciutat concreta.
 
-## Building
 
-To build the project run:
+## Justificació
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- El tema del clima és senzill, té API gratuïta i permet fer una demo ràpidament.
+- Angular/Tailwind permeten desenvolupar ràpid amb poc codi i bon aspecte visual.
+- L’estructura amb varies pàgines es pot fer amb rutes senzilles amb Angular.
+- La web demostra ús d’API, disseny, navegació, SEO i organització.
