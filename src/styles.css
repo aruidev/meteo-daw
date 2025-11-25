@@ -6,7 +6,7 @@
     --secondary-color: #ffed4a;
     --shadow-dark: rgba(0, 0, 0, 0.4);
     --text-color: #ffffff;
-    --font-family: 'Helvetica Neue', sans-serif;
+    --font-family: Roboto, sysytem-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 html, body {

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { OnInit } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
+import { WeatherData } from '../../models/weather.model';
 
 @Component({
   selector: 'app-weather-card',
@@ -12,7 +13,9 @@ import { WeatherService } from '../../services/weather.service';
 export class WeatherCard implements OnInit {
 
   city: string = 'Madrid';
-  lang: string = 'es';
+  lang: string = 'EN';
+  offset: number = 3600;
+  weatherData?: WeatherData;
 
   constructor(private weatherService: WeatherService) { }
 
@@ -20,7 +23,7 @@ export class WeatherCard implements OnInit {
     this.weatherService.getWeatherByCity(this.city, this.lang)
       .subscribe({
         next: (response) => {
-          console.log(response);
+          this.weatherData = response as WeatherData;
       }
     });
   }
