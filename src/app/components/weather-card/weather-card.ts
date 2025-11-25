@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-weather-card',
-  imports: [],
+  imports: [DecimalPipe],
   templateUrl: './weather-card.html',
   styleUrl: './weather-card.css',
 })
