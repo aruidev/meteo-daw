@@ -24,4 +24,8 @@ export class WeatherService {
     return nd.toLocaleString();
   }
 
+  farenheitToCelsius(fahrenheit: number): number {
+    return (fahrenheit - 32) * 5 / 9;
+  }
+
 }
