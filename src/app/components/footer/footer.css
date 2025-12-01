@@ -1,0 +1,23 @@
+:host {
+    margin-top: auto; /* el host es el flex-item dentro de body */
+    width: 100%;
+    display: block;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 1rem 0;
+    background-color: var(--primary-color);
+    box-shadow: 0 -2px 8px var(--shadow-dark);
+}
+
+.footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+}
