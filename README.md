@@ -5,8 +5,8 @@ App web on consultar informació meteorològica bàsica, mostrant el temps actua
 ## Tecnologies
 
 - Angular 21.0.0
-- Tailwind CSS v4
-- OpenWeatherMap API (gratuïta) per obtenir el temps.
+- Tailwind CSS v4       
+- [Open Weather (rapidapi.com)](https://rapidapi.com/worldapi/api/open-weather13)
 
 ## Estructura del projecte
 
