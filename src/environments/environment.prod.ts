@@ -1,5 +1,5 @@
 export const environment = {
-    production : false,
+    production : true,
     weatherApiBaseUrl : 'https://open-weather13.p.rapidapi.com/',
     options: {
         method: 'GET',
