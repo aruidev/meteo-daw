@@ -1,0 +1,7 @@
+# Permetre a tots els robots accedir a tot
+User-agent: *
+Disallow:
+
+# Exemple: bloquejar un directori privat
+User-agent: *
+Disallow: /privat/
