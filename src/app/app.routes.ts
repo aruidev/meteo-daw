@@ -1,14 +1,26 @@
-
-import { Home } from './pages/home/home';
-import { Weather } from './pages/weather/weather';
-import { About } from './pages/about/about';
-import { Contact } from './pages/contact/contact';
-import { Faq } from './pages/faq/faq';
-
 export const routes = [
-	{ path: '', component: Home },
-	{ path: 'weather', component: Weather },
-	{ path: 'about', component: About },
-	{ path: 'contact', component: Contact },
-	{ path: 'faq', component: Faq },
+	{
+		path: '',
+		loadComponent: () => import('./pages/home/home').then(m => m.Home)
+	},
+	{
+		path: 'weather',
+		loadComponent: () => import('./pages/weather/weather').then(m => m.Weather)
+	},
+	{
+		path: 'about',
+		loadComponent: () => import('./pages/about/about').then(m => m.About)
+	},
+	{
+		path: 'contact',
+		loadComponent: () => import('./pages/contact/contact').then(m => m.Contact)
+	},
+	{
+		path: 'faq',
+		loadComponent: () => import('./pages/faq/faq').then(m => m.Faq)
+	},
+	{
+		path: 'gloassary',
+		loadComponent: () => import('./pages/glossary/glossary').then(m => m.Glossary)
+	},
 ];
