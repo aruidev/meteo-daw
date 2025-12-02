@@ -8,7 +8,7 @@
 @if (weatherData) {
     <div class="container">
         <div class="upper-data">
-            <img [src]="weatherData.temp < 15 ? 'assets/cold-land-day.png' : 'assets/hot-land-day.png'" alt="Weather Image">
+            <img [src]="weatherData.temp < 15 ? 'assets/cold-land-day.webp' : 'assets/hot-land-day.webp'" alt="Weather Image">
             <div class="weather-data">
                 <div class="location">{{ weatherData.name }}</div>
                 <div class="temperature">{{ weatherData.temp | number: '1.0-0' }}°C</div>
@@ -63,7 +63,7 @@
 } @else {
     <div class="container">
         <div class="upper-data">
-            <img src="assets/hot-land-day.png" alt="Placeholder Image">
+            <img src="assets/hot-land-day.webp" alt="Placeholder Image">
             <div class="weather-data">
                 <div class="location animate-pulse">--</div>
                 <div class="temperature animate-pulse">--°C</div>

@@ -1,0 +1,43 @@
+
+.glossary-table-container {
+    box-shadow: 0 4px 8px var(--shadow-dark);
+    border-radius: 8px;
+    background-color: white;
+    scrollbar-width: auto;
+    scrollbar-color: var(--primary-color) #f0f0f0;
+}
+
+.glossary-table-container::-webkit-scrollbar {
+    width: 10px;
+}
+.glossary-table-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 8px;
+}
+.glossary-table-container::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 8px;
+}
+
+.glossary-table-container {
+    padding-right: 0 !important;
+}
+
+table {
+    z-index: 1;
+}
+
+thead, thead th {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+tbody tr {
+    background-color: white;
+    color: black;
+}
+
+tbody tr:hover {
+    background-color: var(--secondary-color);
+    color: black;
+}
