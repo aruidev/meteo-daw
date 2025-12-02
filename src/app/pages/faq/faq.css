@@ -1,0 +1,6 @@
+.accordion-panel {
+    background-color: #f9f9f9;
+    color: black;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 10px 10px 10px var(--shadow-dark);
+}

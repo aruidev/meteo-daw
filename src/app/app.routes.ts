@@ -6,7 +6,7 @@ import { Contact } from './pages/contact/contact';
 import { Faq } from './pages/faq/faq';
 
 export const routes = [
-	{ path: 'home', component: Home },
+	{ path: '', component: Home },
 	{ path: 'weather', component: Weather },
 	{ path: 'about', component: About },
 	{ path: 'contact', component: Contact },
