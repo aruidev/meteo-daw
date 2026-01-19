@@ -5,13 +5,27 @@
     </a>
     <div class="nav">
         <ul class="nav-items">
-            <li class="nav-item" routerLink="/">Home</li>
-            <li class="nav-item" routerLink="/weather">Weather</li>
-            <li class="nav-item" routerLink="/map">Map</li>
-            <li class="nav-item" routerLink="/about">About</li>
-            <li class="nav-item" routerLink="/contact">Contact</li>
-            <li class="nav-item" routerLink="/faq">FAQ</li>
-            <li class="nav-item" routerLink="/gloassary">Glossary</li>
+            <li routerLinkActive="nav-item--active" [routerLinkActiveOptions]="{ exact: true }">
+                <a class="nav-item" routerLink="/">Home</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/weather">Weather</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/map">Map</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/about">About</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/contact">Contact</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/faq">FAQ</a>
+            </li>
+            <li routerLinkActive="nav-item--active">
+                <a class="nav-item" routerLink="/gloassary">Glossary</a>
+            </li>
         </ul>
     </div>
 </header>

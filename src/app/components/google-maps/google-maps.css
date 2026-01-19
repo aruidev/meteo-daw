@@ -1,3 +1,24 @@
+.google-maps-wrapper {
+    position: relative;
+    display: block;
+}
+.google-maps-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 iframe {
     box-shadow: 10px 10px 10px var(--shadow-dark);
+    position: relative;
+    z-index: 5;
+    transition: z-index 0s linear;
+}
+iframe.loaded {
+    z-index: 20;
 }

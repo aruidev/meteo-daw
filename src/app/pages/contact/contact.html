@@ -1,1 +1,65 @@
-<p>contact works!</p>
+<section class="contact-shell">
+	<div class="contact-card">
+		<div class="contact-grid">
+			<div class="contact-copy">
+				<p class="eyebrow">Contact</p>
+				<h1 class="headline">Tell us how we can help</h1>
+				<p class="lede">
+					Share feedback, request a feature, or report an issue with MeteoDAW. We read every
+					message carefully.
+				</p>
+				<div class="contact-highlights">
+					<div class="pill">Friendly responses</div>
+					<div class="pill">Weather & accessibility feedback welcome</div>
+				</div>
+			</div>
+
+			<form class="contact-form" (submit)="onSubmit($event)" novalidate>
+				<div class="form-field">
+					<label for="name">Full name</label>
+					<input
+						id="name"
+						name="name"
+						type="text"
+						placeholder="John Smith"
+						autocomplete="name"
+						required
+					/>
+				</div>
+
+				<div class="form-field">
+					<label for="email">Email</label>
+					<input
+						id="email"
+						name="email"
+						type="email"
+						placeholder="you@example.com"
+						autocomplete="email"
+						required
+					/>
+				</div>
+
+				<div class="form-field">
+					<label for="subject">Subject</label>
+					<input id="subject" name="subject" type="text" placeholder="Weather feature idea" />
+				</div>
+
+				<div class="form-field">
+					<label for="message">Message</label>
+					<textarea
+						id="message"
+						name="message"
+						rows="2"
+						placeholder="Share the details so we can help"
+						required
+					></textarea>
+				</div>
+
+				<div class="form-actions">
+					<button type="submit">Send message</button>
+					<p class="form-hint">We only use your details to reply to your request.</p>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>

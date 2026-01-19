@@ -1,27 +1,39 @@
-import { Component, Renderer2, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   imports: [],
   templateUrl: './contact.html',
   styleUrl: './contact.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Contact implements OnInit {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {
+    const existing = document.querySelector('script[data-schema="contact-ld"]');
+
+    if (existing) {
+      return;
+    }
+
     const script = this.renderer.createElement('script');
     script.type = 'application/ld+json';
+    script.setAttribute('data-schema', 'contact-ld');
     script.text = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact MeteoDAW",
-      "description": "Contact page for inquiries and suggestions about MeteoDAW.",
-      "publisher": {
-        "@type": "Organization",
-        "name": "MeteoDAW"
-      }
+      '@context': 'https://schema.org',
+      '@type': 'ContactPage',
+      name: 'Contact MeteoDAW',
+      description: 'Contact page for inquiries and suggestions about MeteoDAW.',
+      publisher: {
+        '@type': 'Organization',
+        name: 'MeteoDAW',
+      },
     });
     this.renderer.appendChild(document.head, script);
+  }
+
+  onSubmit(event: Event): void {
+    event.preventDefault();
   }
 }

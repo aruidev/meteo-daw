@@ -1,0 +1,16 @@
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.card-img {
+    background-color: white;
+}
+
+.card {
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px var(--shadow-dark);
+}
