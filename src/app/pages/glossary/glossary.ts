@@ -1,4 +1,4 @@
-import { Component, computed } from '@angular/core';
+import { Component, computed, Renderer2, OnInit } from '@angular/core';
 import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
@@ -7,8 +7,11 @@ import { ContentLangService } from '../../services/contentLang.service';
   templateUrl: './glossary.html',
   styleUrl: './glossary.css',
 })
-export class Glossary {
-  constructor(public contentLangService: ContentLangService) {}
+export class Glossary implements OnInit {
+  constructor(
+    private renderer: Renderer2,
+    public contentLangService: ContentLangService,
+  ) {}
 
   groupedEntries = computed(() => {
     const entries = this.contentLangService.content().glossary.entries;
@@ -25,4 +28,18 @@ export class Glossary {
     return Object.values(groups).sort((a, b) => a.letter.localeCompare(b.letter));
   });
 
+  ngOnInit() {
+    const script = this.renderer.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: 'Glossary',
+      description: 'Glossary of meteorological terms and weather-related concepts.',
+      datePublished: '2025-12-15',
+      inLanguage: 'en',
+      provider: { '@type': 'Organization', name: 'MeteoDAW' },
+    });
+    this.renderer.appendChild(document.head, script);
+  }
 }
