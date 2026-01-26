@@ -1,174 +1,23 @@
-<h2 class="text-2xl font-bold mb-4 text-(--primary-color)">Glossary</h2>
+<h1 class="text-2xl font-bold mb-4 text-(--primary-color)">{{ contentLangService.content().glossary.title }}</h1>
 <div class="glossary-container">
 
   <div class="h-116 max-w-6xl mx-auto pr-2 overflow-auto glossary-table-container">
     <table class="table table-pin-rows bg-base-200 w-full">
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">A</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Atmosphere</td>
-          <td>The layer of gases surrounding the Earth, essential for weather phenomena.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Anemometer</td>
-          <td>Instrument used to measure wind speed.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">B</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Barometer</td>
-          <td>Instrument that measures atmospheric pressure.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Blizzard</td>
-          <td>Severe snowstorm with strong winds and low visibility.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">C</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Cloud</td>
-          <td>Visible mass of condensed water vapor floating in the atmosphere.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Cyclone</td>
-          <td>Large scale air mass that rotates around a strong center of low atmospheric pressure.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">D</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Dew Point</td>
-          <td>The temperature at which air becomes saturated with moisture and dew forms.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Drought</td>
-          <td>Extended period of deficient rainfall relative to the statistical multi-year average for a region.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">F</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Fog</td>
-          <td>Thick cloud of tiny water droplets suspended in the atmosphere at or near the earth's surface.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Front</td>
-          <td>Boundary separating two masses of air of different densities.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">H</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Humidity</td>
-          <td>The amount of water vapor in the air.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Hurricane</td>
-          <td>A type of tropical cyclone with strong winds and heavy rain.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">P</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Precipitation</td>
-          <td>Any form of water - liquid or solid - falling from the atmosphere to the ground.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Pressure</td>
-          <td>The force exerted by the weight of the air above.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">R</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Rain</td>
-          <td>Liquid water drops that fall from clouds.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Relative Humidity</td>
-          <td>The percentage of water vapor present in air compared to the maximum amount the air can hold at that
-            temperature.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">S</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Snow</td>
-          <td>Precipitation in the form of ice crystals.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Storm</td>
-          <td>Disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">T</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Temperature</td>
-          <td>Degree of hotness or coldness measured on a definite scale.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Thunderstorm</td>
-          <td>Storm with thunder and lightning and typically also heavy rain or hail.</td>
-        </tr>
-      </tbody>
-      <thead>
-        <tr>
-          <th colspan="2" class="text-xl">W</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="font-bold">Weather</td>
-          <td>The state of the atmosphere at a place and time as regards heat, dryness, sunshine, wind, rain, etc.</td>
-        </tr>
-        <tr>
-          <td class="font-bold">Wind</td>
-          <td>Movement of air from high to low pressure areas.</td>
-        </tr>
-      </tbody>
+      @for (group of groupedEntries(); track group.letter) {
+        <thead>
+          <tr>
+            <th colspan="2" class="text-xl">{{ group.letter }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (entry of group.items; track entry.term) {
+            <tr>
+              <td class="font-bold">{{ entry.term }}</td>
+              <td>{{ entry.def }}</td>
+            </tr>
+          }
+        </tbody>
+      }
     </table>
   </div>
 </div>

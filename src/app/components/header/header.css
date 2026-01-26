@@ -44,3 +44,16 @@
 	color: var(--primary-color);
 	font-weight: bold;
 }
+
+select {
+	background: transparent;
+	border: none;
+	color: var(--text-color);
+	font-size: 1rem;
+	cursor: pointer;
+}
+
+option {
+	background-color: var(--background-color);
+	color: var(--primary-color);
+}

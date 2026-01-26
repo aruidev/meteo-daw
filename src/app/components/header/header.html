@@ -6,25 +6,32 @@
     <div class="nav">
         <ul class="nav-items">
             <li routerLinkActive="nav-item--active" [routerLinkActiveOptions]="{ exact: true }">
-                <a class="nav-item" routerLink="/">Home</a>
+                <a class="nav-item" routerLink="/">{{ contentLangService.content().header.home }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/weather">Weather</a>
+                <a class="nav-item" routerLink="/weather">{{ contentLangService.content().header.weather }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/map">Map</a>
+                <a class="nav-item" routerLink="/map">{{ contentLangService.content().header.map }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/about">About</a>
+                <a class="nav-item" routerLink="/about">{{ contentLangService.content().header.about }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/contact">Contact</a>
+                <a class="nav-item" routerLink="/contact">{{ contentLangService.content().header.contact }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/faq">FAQ</a>
+                <a class="nav-item" routerLink="/faq">{{ contentLangService.content().header.faq }}</a>
             </li>
             <li routerLinkActive="nav-item--active">
-                <a class="nav-item" routerLink="/gloassary">Glossary</a>
+                <a class="nav-item" routerLink="/glossary">{{ contentLangService.content().header.glossary }}</a>
+            </li>
+            <li>
+                <select name="language" id="language" (change)="onLangChange($event)" [value]="selectedLang()">
+                    @for (lang of languages; track lang.code) {
+                    <option [value]="lang.code" [selected]="selectedLang() === lang.code">{{ lang.label }}</option>
+                    }
+                </select>
             </li>
         </ul>
     </div>

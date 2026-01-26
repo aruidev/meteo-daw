@@ -4,6 +4,7 @@ import { OnInit } from '@angular/core';
 import { WeatherService } from '../../services/weather.service';
 import { Welcome } from '../../models/weather.model';
 import { FormsModule } from '@angular/forms';
+import { ContentLangService } from '../../services/contentLang.service';
 
 type WeatherData = {
     name: string;
@@ -22,6 +23,8 @@ type WeatherData = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WeatherCard implements OnInit {
+
+  constructor(public contentLangService: ContentLangService) {}
 
   city: string = 'Barcelona';
   lang: string = 'EN';

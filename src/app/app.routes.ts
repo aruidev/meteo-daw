@@ -24,7 +24,7 @@ export const routes = [
 		loadComponent: () => import('./pages/faq/faq').then(m => m.Faq)
 	},
 	{
-		path: 'gloassary',
+		path: 'glossary',
 		loadComponent: () => import('./pages/glossary/glossary').then(m => m.Glossary)
 	},
 ];

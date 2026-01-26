@@ -1,5 +1,6 @@
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
   selector: 'app-about',
@@ -8,7 +9,7 @@ import { RouterLink } from "@angular/router";
   styleUrl: './about.css',
 })
 export class About implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, public contentLangService: ContentLangService) {}
 
   ngOnInit() {
     const script = this.renderer.createElement('script');

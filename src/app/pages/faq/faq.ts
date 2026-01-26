@@ -1,4 +1,5 @@
 import { Component, Renderer2, OnInit } from '@angular/core';
+import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
   selector: 'app-faq',
@@ -8,7 +9,7 @@ import { Component, Renderer2, OnInit } from '@angular/core';
 })
 export class Faq implements OnInit {
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, public contentLangService: ContentLangService) {}
 
   ngOnInit() {
     const script = this.renderer.createElement('script');

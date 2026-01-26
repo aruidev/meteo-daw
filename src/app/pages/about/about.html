@@ -1,27 +1,27 @@
 <section class="about-section rounded-lg">
-    <h2 class="text-2xl font-bold mb-4 text-(--primary-color)">About this project</h2>
+    <h1 class="text-2xl font-bold mb-4 text-(--primary-color)">{{ contentLangService.content().about.title }}</h1>
     <div class="card bg-base-100 w-150">
         <figure class="card-img">
             <img [src]="'assets/logo-sapa.png'" alt="Logo Institut Sa Palomera"/>
         </figure>
         <div class="card-body bg-(--primary-color) text-(--text-color)">
             <p>
-                We are Alex Ruiz, Mija Candelaresi, and Arnau Aumedes. 
+                {{ contentLangService.content().about.authors }}
             </p>
             <p>
-                This project is developed as part of the SEO
-                class in the 2nd year of DAW at Institut Sa Palomera.
+                {{ contentLangService.content().about.context }}
             </p>
             <p>
-                The main goal of this project is to learn how to optimize a website for search engines, while also
-                experimenting with APIs and modern Angular features.
+                {{ contentLangService.content().about.goal }}
             </p>
             <p>
-                <strong>Tech Stack:</strong> Pure front-end using Angular.
+                <strong>{{ contentLangService.content().about.tech.split(':')[0] }}:</strong> {{ contentLangService.content().about.tech.split(':')[1] }}
             </p>
             <div class="card-actions justify-end">
                 <a routerLink="/contact"
-                class="inline-block px-4 py-2 bg-(--secondary-color) hover:bg-(--secondary-color-alt) text-(--primary-color) font-bold rounded-full shadow-md transition-colors text-base">Contact</a>
+                class="inline-block px-4 py-2 bg-(--secondary-color) hover:bg-(--secondary-color-alt) text-(--primary-color) font-bold rounded-full shadow-md transition-colors text-base">
+                    {{ contentLangService.content().about.contact }}
+                </a>
             </div>
         </div>
     </div>
