@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from "@angular/router";
+import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,5 @@ import { RouterLink } from "@angular/router";
   styleUrl: './home.css',
 })
 export class Home {
-
+  constructor(public contentLangService: ContentLangService) {}
 }

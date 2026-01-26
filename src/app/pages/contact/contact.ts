@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit, Renderer2 } from '@angular/core';
+import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,7 @@ import { ChangeDetectionStrategy, Component, OnInit, Renderer2 } from '@angular/
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Contact implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, public contentLangService: ContentLangService) {}
 
   ngOnInit() {
     const existing = document.querySelector('script[data-schema="contact-ld"]');

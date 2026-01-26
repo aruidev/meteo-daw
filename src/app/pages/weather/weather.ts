@@ -1,5 +1,6 @@
 import { Component, Renderer2, OnInit } from '@angular/core';
 import { WeatherCard } from "../../components/weather-card/weather-card";
+import { ContentLangService } from '../../services/contentLang.service';
 
 @Component({
   selector: 'app-weather',
@@ -8,7 +9,7 @@ import { WeatherCard } from "../../components/weather-card/weather-card";
   styleUrl: './weather.css',
 })
 export class Weather implements OnInit {
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, public contentLangService: ContentLangService) {}
 
   ngOnInit() {
     const script = this.renderer.createElement('script');
