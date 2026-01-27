@@ -27,7 +27,7 @@
                 <a class="nav-item" routerLink="/glossary">{{ contentLangService.content().header.glossary }}</a>
             </li>
             <li>
-                <select name="language" id="language" (change)="onLangChange($event)" [value]="selectedLang()">
+                <select name="language" id="language" aria-label="Select language" (change)="onLangChange($event)" [value]="selectedLang()">
                     @for (lang of languages; track lang.code) {
                     <option [value]="lang.code" [selected]="selectedLang() === lang.code">{{ lang.label }}</option>
                     }
